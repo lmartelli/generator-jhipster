@@ -34,7 +34,7 @@ public class SpringBootTestClassOrderer implements ClassOrderer {
     }
 
     private static int getOrder(ClassDescriptor classDescriptor) {
-        if (classDescriptor.findAnnotation(IntegrationTest.class).isPresent()) {
+        if (classDescriptor.isAnnotated(IntegrationTest.class)) {
             return 2;
         }
         return 1;
